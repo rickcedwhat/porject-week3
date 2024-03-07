@@ -1,0 +1,36 @@
+html {
+    background:black;
+    color:white;
+    box-sizing: border-box;
+}
+
+navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    width:100%;    
+}
+
+#tabs{
+    display: flex;
+    justify-content: space-between;
+    width:250px;
+}
+
+navbar [id$=tab]{
+    padding:10px;
+    border:2px solid white;
+}
+
+main{
+    display: flex;
+}
+
+section{
+    display:none;
+}
+
+section.active{
+    display: flex;
+}
