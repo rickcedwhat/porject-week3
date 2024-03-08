@@ -1,30 +1,73 @@
+:root{
+    --bgColor:black;
+    --textColor:white;
+    --tabColor:rgb(229, 238, 178);
+    --tabTextColor:black;
+    --activeTabBGColor:rgb(229, 238, 178);
+    --inactiveTabBGColor:rgb(149, 155, 116);
+}
+
 html {
-    background:black;
-    color:white;
+    background:var(--bgColor);
+    color:var(--textColor);
     box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction:column;
+    height:100vh;
 }
 
 navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    display: flex;
-    width:100%;    
+    padding: 0 20px;
 }
 
 #tabs{
     display: flex;
-    justify-content: space-between;
-    width:250px;
+    padding-left:50px;
 }
 
-navbar [id$=tab]{
-    padding:10px;
-    border:2px solid white;
+[id$=tab]{
+    padding:10px 20px;
+    cursor: pointer;
+    border-bottom:none;
+    position:relative;
+    background:var(--inactiveTabBGColor);
+    bottom:-5px;
+    border-radius:5px 5px 0 0;
+    margin-right:5px;
+    min-width:75px;
+    text-align:center;
+    font-weight: bold;
+    z-index:0;
+    color:var(--tabTextColor);
+}
+
+[id$=tab].active{
+    border-bottom:var(--bgColor);
+    background:var(--activeTabBGColor);
+    z-index:2;
 }
 
 main{
     display: flex;
+    flex-direction: column;
+    margin:20px;
+    height:100%;
+}
+
+#sections{
+    border:5px solid var(--tabColor);
+    border-radius:20px;
+    flex-grow:1;
+    z-index:1;
+    padding:20px;
+    background-color: var(--tabColor);
+    color:var(--tabTextColor);
 }
 
 section{
@@ -32,5 +75,10 @@ section{
 }
 
 section.active{
+    display: flex;
+}
+
+ul#links{
+    list-style-type: none;
     display: flex;
 }

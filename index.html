@@ -5,27 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
     <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer ></script>
     <title>Cedrick Catalan</title>
 </head>
 <body>
     <navbar>
         <h1>Cedrick Catalan</h1>
-        <div id="tabs">
-            <button id="bio-tab">Bio</button>
-            <button id="portfolio-tab">Portfolio</button>
-            <button id="contact-tab">Contact</button>
+        <div>
+            <ul id="links">
+                <li>Deloitte People Network</li>
+                <li>Multiverse Community Hub</li>
+                <li>LinkedIn</li>
+            </ul>
         </div>
     </navbar>
     <main>
-        <section id="bio-section" class="active">
-            Bio goes here
-        </section>
-        <section id="portfolio-section">
-            Portfolio goes here
-        </section>
-        <section id="contact-section">
-            Contact goes here
-        </section>
+        <container id="tabs">
+            <div id="bio-tab" class="active">Bio</div>
+            <div id="portfolio-tab">Portfolio</div>
+            <div id="contact-tab">Contact</div>
+        </container>
+        <container id="sections">
+            <section id="bio-section" class="active">
+                Bio goes here
+            </section>
+            <section id="portfolio-section">
+                Portfolio goes here
+            </section>
+            <section id="contact-section">
+                Contact goes here
+            </section>
+        </container>
     </main>
 </body>
 </html>
