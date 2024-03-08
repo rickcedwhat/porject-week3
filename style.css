@@ -1,84 +1,213 @@
 :root{
-    --bgColor:black;
-    --textColor:white;
-    --tabColor:rgb(229, 238, 178);
-    --tabTextColor:black;
-    --activeTabBGColor:rgb(229, 238, 178);
-    --inactiveTabBGColor:rgb(149, 155, 116);
+    --startBarColor:rgb(30 28 28);
 }
 
-html {
-    background:var(--bgColor);
-    color:var(--textColor);
-    box-sizing: border-box;
-}
-
-body {
-    display: flex;
-    flex-direction:column;
-    height:100vh;
-}
-
-navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-#tabs{
-    display: flex;
-    padding-left:50px;
-}
-
-[id$=tab]{
-    padding:10px 20px;
-    cursor: pointer;
-    border-bottom:none;
-    position:relative;
-    background:var(--inactiveTabBGColor);
-    bottom:-5px;
-    border-radius:5px 5px 0 0;
-    margin-right:5px;
-    min-width:75px;
-    text-align:center;
-    font-weight: bold;
-    z-index:0;
-    color:var(--tabTextColor);
-}
-
-[id$=tab].active{
-    border-bottom:var(--bgColor);
-    background:var(--activeTabBGColor);
-    z-index:2;
+body{
+    background-image: url("/images/windows desktop.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-height: 100vh;
+    font-family: system-ui;
 }
 
 main{
     display: flex;
     flex-direction: column;
-    margin:20px;
+    height:100vh;
+}
+
+#desktop{
+    overflow-y: clip;
+}
+
+#desktop #icons{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    height: calc(100vh - 44px);
+}
+
+.desktop-icon{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.desktop-icon img{
+    height:75%;
+    cursor:pointer;
+    
+}
+
+.toolbar-icon img{
     height:100%;
+    cursor:pointer;
 }
 
-#sections{
-    border:5px solid var(--tabColor);
-    border-radius:20px;
-    flex-grow:1;
-    z-index:1;
-    padding:20px;
-    background-color: var(--tabColor);
-    color:var(--tabTextColor);
+#start-bar{
+    display:flex;
+    background-color: var(--startBarColor)
 }
 
-section{
-    display:none;
+.desktop-icon{
+    height:75px;
+    width:75px;
+    padding:5px;
 }
 
-section.active{
-    display: flex;
-}
-
-ul#links{
+ul{
     list-style-type: none;
+    margin: 0;
+    padding: 0;
     display: flex;
+    align-items:center;
+}
+
+.icon{
+    display:flex;
+    justify-content: center;overflow-y: clip;
+    align-items:center;
+}
+
+#searchbar input{
+    width:281px;
+    height:41px;
+    font-size:20px;
+    margin-right:5px;
+}
+
+::placeholder{
+    color:#575151;
+}
+
+input:focus{
+    outline:none;
+}
+
+#window-objects{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    pointer-events: none;
+}
+
+.window-object{
+    position:absolute;
+    display:none;
+    background:white;
+    height:attr(height);
+    width:attr(width);
+    pointer-events: all;
+}
+
+.open{
+    display:flex;
+    flex-direction: column;
+}
+
+.maximized{
+    top:0;
+    left:0;
+    right:0;
+    bottom:43px;
+}
+
+.border-bar{
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+    align-items: center;
+    color:white;
+}
+
+.border-bar ul{
+    display: flex;
+}
+
+.border-bar li{
+    margin: 5px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.4s;
+}
+
+ 
+
+.border-bar li:hover{
+    background-color: rgb(37, 37, 37);
+    color: white;
+}
+
+.toolbar-icon{
+    display:none;
+    cursor: pointer;
+    height:45px;
+    margin-left:5px;
+}
+
+.show, .pinned{
+    display:block;
+}
+
+.show{
+    border-bottom:2px solid lightblue;
+}
+
+.active{
+    background:#454444;
+}
+
+.title{
+    padding:0 10px;
+}
+
+.body{
+    margin:10px;
+    overflow-y:scroll;
+}
+
+.container{
+    display: flex;
+}
+
+.column{
+    flex-direction: column;
+}
+
+.space-evenly{
+    justify-content: space-evenly;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.text-center{
+    text-align: center;
+}
+
+img.jsx, img.json{
+    filter:hue-rotate(180deg)
+}
+
+pre{
+    font-size: 2em;
+}
+
+ul.margin20 li{
+    margin: 20px 0;
 }
