@@ -82,7 +82,7 @@ const srcs = {
 sections.forEach(({title,pinned,body,color,ext},i)=>{
     ext = ext || 'txt'
     color = color || "grey";
-    const src = `/project-week3/images/${srcs[ext]}`
+    const src = `/html-project-rickcedwhat/images/${srcs[ext]}`
     const desktopIcon = document.createElement('div');
     desktopIcon.className='desktop-icon'
     desktopIcons.append(desktopIcon)
